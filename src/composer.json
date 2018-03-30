@@ -1,0 +1,37 @@
+{
+  "name": "hachi-zzq/tencent-ocr",
+  "description": "腾讯 OCR SDK",
+  "keywords": [
+    "ocr",
+    "tencent",
+    "sdk",
+    "OCR"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "hachi",
+      "email": "haichi.zzq@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "laravel/framework": ">=5.5",
+    "pimple/pimple": "^3.0",
+    "guzzlehttp/guzzle": "^6.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Hachi\\TencentOcr\\": "src/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    },
+    {
+      "packagist": false
+    }
+  ]
+}
