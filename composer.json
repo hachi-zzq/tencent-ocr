@@ -16,7 +16,6 @@
   ],
   "require": {
     "php": ">=7.0.0",
-    "laravel/framework": ">=5.5",
     "pimple/pimple": "^3.0",
     "guzzlehttp/guzzle": "^6.2"
   },
