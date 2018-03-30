@@ -42,7 +42,7 @@ class Sign implements SignInterface
         $current = time();
         $rdm = rand(100, 1000);
         $userId = '0';
-        $srcStr = 'a=' . $config['appid'] . '&b=' . $config['bucket'] . '&k=' . $config['secret_id'] . '&e=' . $expired . '&t=' . $current . '&r=' . $rdm . '&u='
+        $srcStr = 'a=' . $config['app_id'] . '&b=' . $config['bucket'] . '&k=' . $config['secret_id'] . '&e=' . $expired . '&t=' . $current . '&r=' . $rdm . '&u='
             . $userId . '&f=';
 
         $sign = base64_encode(hash_hmac('SHA1', $srcStr, $config['secret_key'], true) . $srcStr);

@@ -21,13 +21,4 @@ class Application extends ServiceContainer
         \Hachi\TencentOcr\LicensePlate\ServiceProvider::class,
     ];
 
-    /**
-     * @var array
-     */
-    protected $defaultConfig = [
-        // http://docs.guzzlephp.org/en/stable/request-options.html
-        'http' => [
-            'base_uri' => 'http://recognition.image.myqcloud.com/ocr',
-        ],
-    ];
 }

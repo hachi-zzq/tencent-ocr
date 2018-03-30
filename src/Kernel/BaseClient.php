@@ -41,7 +41,7 @@ class BaseClient
     /**
      * @var
      */
-    protected $baseUri;
+    protected $baseUri = 'http://recognition.image.myqcloud.com/';
 
     /**
      * BaseClient constructor.
@@ -198,8 +198,6 @@ class BaseClient
     {
         // access token
         $this->pushMiddleware($this->headerSingMiddleware(), 'sign');
-        // log
-        $this->pushMiddleware($this->logMiddleware(), 'log');
     }
 
     /**
@@ -219,17 +217,4 @@ class BaseClient
             };
         };
     }
-
-    /**
-     * Log the request.
-     *
-     * @return \Closure
-     */
-    protected function logMiddleware()
-    {
-        $formatter = new MessageFormatter($this->app['config']['http.log_template'] ?? MessageFormatter::DEBUG);
-
-        return Middleware::log($this->app['logger'], $formatter);
-    }
-
 }

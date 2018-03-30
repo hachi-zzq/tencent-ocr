@@ -7,7 +7,7 @@
 
 ```$shell
 
-composer require hachi-zzq/hachi-zzq/tencent-ocr
+composer require hachi-zzq/tencent-ocr
 
 ```
 

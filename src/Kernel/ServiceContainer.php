@@ -12,6 +12,7 @@
 namespace Hachi\TencentOcr\Kernel;
 
 use Hachi\TencentOcr\Kernel\Providers\ConfigServiceProvider;
+use Hachi\TencentOcr\Kernel\Providers\SignServiceProvider;
 use Pimple\Container;
 
 /**
@@ -49,8 +50,8 @@ class ServiceContainer extends Container
     /**
      * Constructor.
      *
-     * @param array       $config
-     * @param array       $prepends
+     * @param array $config
+     * @param array $prepends
      * @param string|null $id
      */
     public function __construct(array $config = [], array $prepends = [], string $id = null)
@@ -77,15 +78,7 @@ class ServiceContainer extends Container
      */
     public function getConfig()
     {
-        $base = [
-            // http://docs.guzzlephp.org/en/stable/request-options.html
-            'http' => [
-                'timeout'  => 5.0,
-                'base_uri' => 'https://api.weixin.qq.com/',
-            ],
-        ];
-
-        return array_replace_recursive($base, $this->defaultConfig, $this->userConfig);
+        return array_replace_recursive($this->defaultConfig, $this->userConfig);
     }
 
     /**
@@ -97,7 +90,8 @@ class ServiceContainer extends Container
     {
         return array_merge(
             [
-            ConfigServiceProvider::class
+                ConfigServiceProvider::class,
+                SignServiceProvider::class
             ], $this->providers
         );
     }
@@ -118,7 +112,7 @@ class ServiceContainer extends Container
      * Magic set access.
      *
      * @param string $id
-     * @param mixed  $value
+     * @param mixed $value
      */
     public function __set($id, $value)
     {

@@ -19,9 +19,9 @@ class Client extends BaseClient
         $config = $this->app->config;
 
         return $this->request(
-            '/drivinglicence', 'POST', [
+            'ocr/drivinglicence', 'POST', [
             'json' => [
-                'appid'  => $config['appid'],
+                'appid'  => $config['app_id'],
                 'bucket' => $config['bucket'],
                 'type'   => 0,
                 'url'    => $imageUrl,
