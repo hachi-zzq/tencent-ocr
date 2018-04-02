@@ -18,9 +18,9 @@ class Client extends BaseClient
         $config = $this->app->config;
 
         return $this->request(
-            '/plate', 'POST', [
+            'ocr/plate', 'POST', [
             'json' => [
-                'appid' => $config['appid'],
+                'appid' => $config['app_id'],
                 'url'   => $imageUrl,
             ]
             ]
