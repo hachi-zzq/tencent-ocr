@@ -33,7 +33,7 @@ class ConfigServiceProvider implements ServiceProviderInterface
     public function register(Container $pimple)
     {
         $pimple['config'] = function ($app) {
-            return new Config($app);
+            return new Config($app->getConfig());
         };
     }
 }
