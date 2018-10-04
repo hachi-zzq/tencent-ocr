@@ -30,18 +30,22 @@ return [
 <?php
 
 $config = [
+               // 腾讯的 app_id
               'app_id'     => 'app_id',
+              // 腾讯的 app_secret_id
               'secret_id'  => 'secret_id',
+              // 腾讯的 secret_key
               'secret_key' => 'secret_key',
+              // 腾讯的 bucket
               'bucket'     => 'bucket',
               'response_type'=>'collection'
           ];
 $application = new \Hachi\TencentOcr\Application($config);
 
 //行驶证识别
-$application->driver_license->ocr('http://www');
+$application->driver_license->ocr('http://sample.image.com');
 
 //车牌号识别
-$application->license_plate->ocr('http://xxx');
+$application->license_plate->ocr('http://sample.image.com');
 
 ```
